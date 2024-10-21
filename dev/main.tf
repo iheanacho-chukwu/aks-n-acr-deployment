@@ -1,8 +1,3 @@
-# Reference an existing resource group
-# data "azurerm_resource_group" "aks-rg" {
-#   name = var.resource_group_name
-# }
-
 resource "azurerm_resource_group" "aks-rg" {
   name     = var.resource_group_name
   location = var.location
