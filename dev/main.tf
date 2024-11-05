@@ -50,4 +50,9 @@ resource "azurerm_role_assignment" "acr_pull" {
   scope                = azurerm_container_registry.acr.id
 }
 
+resource "azurerm_role_assignment" "acr_push_client_sp" {
+  principal_id         = var.application_client_id
+  role_definition_name = "AcrPush"
+  scope                = azurerm_container_registry.acr.id
+}
 
