@@ -18,8 +18,7 @@ output "acr_login_server" {
   value = azurerm_container_registry.acr.login_server
 }
 
-resource "local_file" "kubeconfig" {
-  depends_on   = [azurerm_kubernetes_cluster.aks]
-  filename     = "kubeconfig"
-  content      = azurerm_kubernetes_cluster.aks.kube_config_raw
+output "aks_system_assigned_identity_principal_id" {
+  description = "The principal ID of the system-assigned managed identity for the AKS cluster."
+  value       = azurerm_kubernetes_cluster.aks.identity[0].principal_id
 }
