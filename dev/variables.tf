@@ -22,8 +22,3 @@ variable "acr_name" {
   type        = string
   description = "ACR name"
 }
-
-variable "application_client_id" {
-  type        = string
-  description = "Azure Devops service principal"
-}
