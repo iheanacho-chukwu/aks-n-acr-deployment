@@ -43,16 +43,3 @@ resource "azurerm_kubernetes_cluster" "aks" {
     network_plugin    = "kubenet"
   }
 }
-
-resource "azurerm_role_assignment" "acr_pull" {
-  principal_id         = azurerm_kubernetes_cluster.aks.identity[0].principal_id
-  role_definition_name = "AcrPull"
-  scope                = azurerm_container_registry.acr.id
-}
-
-resource "azurerm_role_assignment" "acr_push_client_sp" {
-  principal_id         = var.application_client_id
-  role_definition_name = "AcrPush"
-  scope                = azurerm_container_registry.acr.id
-}
-
