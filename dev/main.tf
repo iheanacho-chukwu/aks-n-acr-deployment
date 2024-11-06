@@ -43,3 +43,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     network_plugin    = "kubenet"
   }
 }
+
+
+
+

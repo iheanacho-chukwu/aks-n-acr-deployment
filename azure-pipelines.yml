@@ -52,7 +52,7 @@ stages:
         targetPath: '$(System.DefaultWorkingDirectory)/dev/output.tfplan'
         artifact: 'tfplan'
 
-- stage: Terraform_Deploy
+- stage: Terraform_Deplo
   dependsOn: Terraform_build
   jobs:
   - deployment: Deploy_Infrastructure
